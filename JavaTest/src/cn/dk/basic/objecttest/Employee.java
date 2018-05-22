@@ -1,5 +1,6 @@
 package cn.dk.basic.objecttest;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee {
@@ -8,25 +9,41 @@ public class Employee {
 
     private String workId;
 
-    public Employee(String name){
+    private double salary;
+
+    private LocalDate hireDay;
+
+    public Employee(String name, String workId, double salary, int year, int month, int day){
+
         this.name = name;
+        this.salary = salary;
+        this.hireDay = LocalDate.of(year, month, day);
     }
 
     public String getWorkId() {
         return workId;
     }
 
-    public void setWorkId(String workId) {
-        this.workId = workId;
-    }
-
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public double getSalary() {
+        return salary;
+    }
+
+    public LocalDate getHireDay() {
+        return hireDay;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getName() +
+                "{name='" + name + '\'' +
+                ", workId='" + workId + '\'' +
+                ", salary=" + salary +
+                ", hireDay=" + hireDay +
+                '}';
     }
 
     @Override

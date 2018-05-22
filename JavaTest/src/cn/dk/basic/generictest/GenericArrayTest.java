@@ -30,8 +30,10 @@ public class GenericArrayTest {
     }
     private static void genericArrayTest(){
         Pair<String>[] stringArr = (Pair<String>[]) new Pair<?>[10];
-        Employee e1 = new Employee("DK");
-        Employee e2 = new Employee("PPX");
+        Employee e1 = new Employee("DK","HEH223", 10, 2017, 12,
+                31);
+        Employee e2 = new Employee("pkp", "HEP001", 20, 2000, 2,
+                30);
         Pair temp = new Pair<Employee>(e1,e2);
         Pair<String> stringPair = new Pair<>("1","2");
         stringArr[0] = temp;
@@ -42,8 +44,10 @@ public class GenericArrayTest {
 
     private static void  genericArrayListTest(){
         ArrayList<Pair<String>> stringArray = new ArrayList<>();
-        Employee e1 = new Employee("DK");
-        Employee e2 = new Employee("PPX");
+        Employee e1 = new Employee("DK","HEH223", 10, 2017, 12,
+                31);
+        Employee e2 = new Employee("pkp", "HEP001", 20, 2000, 2,
+                30);
         Pair<Employee> temp = new Pair(e1,e2);
         Pair<String> stringPair = new Pair<>("1","2");
         stringArray.get(0).getFirst().length();
