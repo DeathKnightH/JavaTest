@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Employee {
 
+    static{ System.out.println("Loading Employee Class");}
     private String name;
 
     private String workId;
@@ -18,6 +19,7 @@ public class Employee {
         this.name = name;
         this.salary = salary;
         this.hireDay = LocalDate.of(year, month, day);
+        System.out.println("construct of Employee Instance");
     }
 
     public String getWorkId() {
