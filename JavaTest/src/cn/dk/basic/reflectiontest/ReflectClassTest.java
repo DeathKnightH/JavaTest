@@ -2,12 +2,20 @@ package cn.dk.basic.reflectiontest;
 
 import cn.dk.basic.objecttest.Employee;
 
-public class reflectClassTest {
+public class ReflectClassTest {
     static class test{
         static {System.out.println("Loading inner class test");}
     }
     public static void main(String[] args){
         System.out.println("inside main");
+//        classLoadingTest();
+        classNameTest();
+//        usingClassTest();
+
+    }
+
+    public static void classLoadingTest(){
+        System.out.println("inside classLoadingTest method");
         Class clazz = Employee.class;
         new Employee("DK","HEH223", 10, 2017, 12, 31);
         System.out.println("After creating Employee");
@@ -19,7 +27,6 @@ public class reflectClassTest {
         System.out.println("After Class.forName(\"cn.dk.basic.objecttest.Manager\")");
         new test();
         System.out.println("After creating inner class test");
-
     }
 
     public static void classNameTest(){
@@ -30,9 +37,26 @@ public class reflectClassTest {
         System.out.println("getCanonicalName():" + employeeCl.getCanonicalName());
         System.out.println("getSimpleName():" + employeeCl.getSimpleName());
         System.out.println("getTypeName():" + employeeCl.getTypeName());
-        System.out.println("getClass():" + employeeCl.getClass());
+        System.out.println("Class.getClass():" + employeeCl.getClass());
+        System.out.println("getClass():" + employee.getClass());
+        System.out.println("class字面量:" + Employee.class);
         System.out.println(int.class);
         System.out.println(Integer.class);
 
+        System.out.println("getClass()与class字面量比较：" + (employee.getClass() == Employee.class));
+
+    }
+
+    public static void usingClassTest(){
+        try {
+            Class clazz = Class.forName("cn.dk.basic.objecttest.Manager");
+            Employee.class.newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

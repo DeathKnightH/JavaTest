@@ -14,12 +14,20 @@ public class Employee {
 
     private LocalDate hireDay;
 
+    public Employee(String name, String workId, double salary){
+        this(name, workId, salary, LocalDate.now());
+        System.out.println("call the public constructor of Employee Instance");
+    }
     public Employee(String name, String workId, double salary, int year, int month, int day){
+        this(name, workId, salary, LocalDate.of(year, month, day));
+        System.out.println("call the public constructor of Employee Instance");
+    }
 
+    private Employee(String name, String workId, double salary, LocalDate hireDay){
         this.name = name;
         this.salary = salary;
-        this.hireDay = LocalDate.of(year, month, day);
-        System.out.println("construct of Employee Instance");
+        this.hireDay = hireDay;
+        System.out.println("call the private constructor of Employee Instance");
     }
 
     public String getWorkId() {
