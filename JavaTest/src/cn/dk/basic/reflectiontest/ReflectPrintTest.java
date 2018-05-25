@@ -8,22 +8,24 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-public class ReflectTest {
+public class ReflectPrintTest {
     public static void main(String[] args){
-        printClassInfo(Manager.class);
+        printClassInfo(Employee.class);
         System.out.println("");
-        printDeclaredClassInfo(Manager.class);
+        printDeclaredClassInfo(Employee.class);
 
     }
 
     public static void printClassInfo(Class clazz){
         printFields(clazz);
         printConstructors(clazz);
+        printMethods(clazz);
     }
 
     public static void printDeclaredClassInfo(Class clazz){
         printDeclaredFields(clazz);
         printDeclaredConstructors(clazz);
+        printDeclaredMethods(clazz);
     }
 
     public static void printConstructors(Class clazz){
@@ -134,7 +136,40 @@ public class ReflectTest {
 
             stringBuilder.append(returnType).append(" ").append(name).append("(");
             Class[] parameters = m.getParameterTypes();
-            
+            for(int i = 0; i < parameters.length; i++){
+                if (i > 0){
+                    stringBuilder.append(", ");
+                }
+                stringBuilder.append(parameters[i].getName());
+            }
+            stringBuilder.append(");");
+            System.out.println(stringBuilder.toString());
+        }
+    }
+
+    public static void printDeclaredMethods(Class clazz){
+        Method[] methods = clazz.getDeclaredMethods();
+        System.out.println("Methods:");
+
+        for(Method m : methods){
+            StringBuilder stringBuilder = new StringBuilder();
+            String modifier = Modifier.toString(m.getModifiers());
+            if(modifier.length() > 0){
+                stringBuilder.append(modifier).append(" ");
+            }
+            String returnType = m.getReturnType().getName();
+            String name = m.getName();
+
+            stringBuilder.append(returnType).append(" ").append(name).append("(");
+            Class[] parameters = m.getParameterTypes();
+            for(int i = 0; i < parameters.length; i++){
+                if (i > 0){
+                    stringBuilder.append(", ");
+                }
+                stringBuilder.append(parameters[i].getName());
+            }
+            stringBuilder.append(");");
+            System.out.println(stringBuilder.toString());
         }
     }
 }
