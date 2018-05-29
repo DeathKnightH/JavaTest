@@ -3,12 +3,12 @@ package cn.dk.basic.proxytest;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class TraceHandler implements InvocationHandler {
+public class JDKTraceHandler implements InvocationHandler {
     private Object target;
-    public TraceHandler(Object t){
+    public JDKTraceHandler(Object t){
         this.target = t;
     }
-    @Override
+
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println(target);
         System.out.println("." + method.getName() + "(");
