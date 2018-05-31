@@ -4,7 +4,9 @@ import cn.dk.basic.objecttest.Employee;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class ProxyTest {
