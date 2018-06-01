@@ -2,11 +2,11 @@ package cn.dk.basic.collectiontest;
 
 import cn.dk.basic.objecttest.Employee;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
-public class HashSetTest {
+public class MapTest {
     public static void main(String[] args){
-        Set<Employee> employeeSet = new HashSet<>();
+        Map<String,Employee> employeeMap = new HashMap<>();
     }
 }
