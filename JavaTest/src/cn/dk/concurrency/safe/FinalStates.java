@@ -3,6 +3,7 @@ package cn.dk.concurrency.safe;
 import com.sun.corba.se.pept.transport.ReaderThread;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -12,7 +13,6 @@ public class FinalStates {
 
     public static void main(String[] args){
         List<IntValue> objectList = generateIntValueList(1000000);
-
         final CountDownLatch countDownLatch = new CountDownLatch(objectList.size());
         System.out.println("数量："+objectList.size());
         // LinkedBlockingDeque<IntValue> deque = new LinkedBlockingDeque<IntValue>(objectList);
