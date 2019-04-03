@@ -1,4 +1,4 @@
-package cn.dk.designpattern.factory.pizza;
+package cn.dk.designpattern.factory.factorymethod.pizza;
 
 public class ChicagoStyleClamPizza extends ClamPizza {
     public ChicagoStyleClamPizza(){

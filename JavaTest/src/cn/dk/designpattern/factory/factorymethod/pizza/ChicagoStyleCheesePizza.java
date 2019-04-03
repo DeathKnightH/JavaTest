@@ -1,4 +1,4 @@
-package cn.dk.designpattern.factory.pizza;
+package cn.dk.designpattern.factory.factorymethod.pizza;
 
 public class ChicagoStyleCheesePizza extends CheesePizza {
     public ChicagoStyleCheesePizza(){

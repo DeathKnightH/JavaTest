@@ -1,6 +1,6 @@
-package cn.dk.designpattern.factory.store;
+package cn.dk.designpattern.factory.factorymethod.store;
 
-import cn.dk.designpattern.factory.pizza.*;
+import cn.dk.designpattern.factory.factorymethod.pizza.*;
 
 public class ChicagoStylePizzaStore extends PizzaStore {
     @Override
