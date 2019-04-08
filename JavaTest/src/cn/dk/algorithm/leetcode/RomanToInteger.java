@@ -3,6 +3,9 @@ package cn.dk.algorithm.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 罗马字符转正整数，范围1-3999
+ */
 public class RomanToInteger {
     public static void main(String[] args) {
         RomanToInteger romanToInteger = new RomanToInteger();

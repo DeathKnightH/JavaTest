@@ -1,5 +1,8 @@
 package cn.dk.algorithm.leetcode;
 
+/**
+ * 是否是回文数字
+ */
 public class PalindromeNumber {
     public static void main(String[] args) {
         PalindromeNumber palindromeNumber = new PalindromeNumber();

@@ -1,5 +1,8 @@
 package cn.dk.algorithm.leetcode;
 
+/**
+ * 整数翻转
+ */
 public class ReverseInteger {
     public static void main(String[] args){
         ReverseInteger reverseInteger = new ReverseInteger();
