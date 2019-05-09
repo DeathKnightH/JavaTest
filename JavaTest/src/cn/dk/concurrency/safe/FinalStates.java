@@ -1,14 +1,12 @@
 package cn.dk.concurrency.safe;
 
-import com.sun.corba.se.pept.transport.ReaderThread;
-
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.LinkedBlockingDeque;
 
+/**
+ * 工作需求，异步加载缓存的优化
+ */
 public class FinalStates {
 
     public static void main(String[] args){
