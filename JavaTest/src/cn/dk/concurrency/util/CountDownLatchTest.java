@@ -19,23 +19,20 @@ public class CountDownLatchTest {
         final CountDownLatch endGate = new CountDownLatch(nThreads);
 
         for (int i = 0; i < nThreads; i++) {
-            Thread temp = new Thread() {
-                @Override
-                public void run() {
+            Thread temp = new Thread(() -> {
+                try {
+                    // startGate闭锁
+                    startGate.await();
                     try {
-                        // startGate闭锁
-                        startGate.await();
-                        try {
-                            task.run();
-                        }finally {
-                            // endGate闭锁计数器-1
-                            endGate.countDown();
-                        }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        task.run();
+                    }finally {
+                        // endGate闭锁计数器-1
+                        endGate.countDown();
                     }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-            };
+            });
             temp.start();
         }
 
