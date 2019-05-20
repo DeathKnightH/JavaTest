@@ -1,4 +1,4 @@
-package cn.dk.net;
+package cn.dk.net.socket;
 
 import java.io.*;
 import java.net.InetSocketAddress;
