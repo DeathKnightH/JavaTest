@@ -22,13 +22,14 @@ public class Main {
 //        System.out.println(byteString);
 //        ObjectInputStream objectInputStream = new ObjectInputStream(byteInputStream);
 //        Object o = objectInputStream.readObject();
-        int i = 10000;
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
-        objectOutputStream.write(i);
-        objectOutputStream.flush();
-        byte[] bytes = byteArrayOutputStream.toByteArray();
-        String byteString = new String(bytes);
-        System.out.println(byteString);
+//        int i = 10000;
+//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+//        objectOutputStream.write(i);
+//        objectOutputStream.flush();
+//        byte[] bytes = byteArrayOutputStream.toByteArray();
+//        String byteString = new String(bytes);
+//        System.out.println(byteString);
+        String byteString = "2";
     }
 }

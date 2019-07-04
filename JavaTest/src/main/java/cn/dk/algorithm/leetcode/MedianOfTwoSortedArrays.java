@@ -21,4 +21,15 @@ package cn.dk.algorithm.leetcode;
  * 则中位数是 (2 + 3)/2 = 2.5
  */
 public class MedianOfTwoSortedArrays {
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m1 = 0, m2 = 0;
+        int i1 = 0, i2 = 0;
+        while((i1 + i2) <= nums1.length + nums2.length){
+            if (nums1[i1] < nums2[i2]){
+
+            }
+        }
+        return (m1 + m2)/2;
+    }
+
 }
