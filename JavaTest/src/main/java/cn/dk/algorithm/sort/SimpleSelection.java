@@ -11,7 +11,7 @@ public class SimpleSelection {
         for (int i = 0; i < intArray.length - 1; i++) {
             int minIndex = i;
             for (int j = i+1; j < intArray.length; j++) {
-                if(intArray[i] > intArray[j]){
+                if(intArray[minIndex] > intArray[j]){
                     minIndex = j;
                 }
                 sumTimes++;
