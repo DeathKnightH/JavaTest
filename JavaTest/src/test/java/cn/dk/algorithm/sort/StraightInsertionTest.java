@@ -10,9 +10,16 @@ public class StraightInsertionTest {
 
     @Test
     public void straightInsertionSort() {
-        int[] case1 = new int[]{1,3,2,4,5,6,7,8,9,10};
+        int[] case1 = ArrayToBeSort.generateNewArrayToBeSortRandom();
         int times = StraightInsertion.straightInsertionSort(case1);
-        System.out.println("Simple-Selection cycle times:" + times);
+        System.out.println("Straight-Insert cycle times:" + times);
         System.out.println(Arrays.toString(case1));
+
+        int[] case2 = ArrayToBeSort.generateNewArrayToBeSortRandom(100000);
+        long start = System.currentTimeMillis();
+        times = StraightInsertion.straightInsertionSort(case2);
+        long end = System.currentTimeMillis();
+        System.out.println("Straight-Insert cycle times:" + times);
+        System.out.println("10w耗时" + (end - start));
     }
 }
