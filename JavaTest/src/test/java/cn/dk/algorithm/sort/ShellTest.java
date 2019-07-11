@@ -19,5 +19,12 @@ public class ShellTest {
         times = Shell.shellSort(case2);
         System.out.println("Shell move times:" + times);
         System.out.println(Arrays.toString(case2));
+
+        int[] case3 = ArrayToBeSort.generateNewArrayToBeSortRandom(10000000);
+        start = System.currentTimeMillis();
+        times = Shell.shellSort(case3);
+        end = System.currentTimeMillis();
+        System.out.println("Shell compare times:" + times);
+        System.out.println("1000w耗时" + (end - start));
     }
 }
