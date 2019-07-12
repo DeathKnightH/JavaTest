@@ -27,4 +27,12 @@ public class MergingTest {
         System.out.println("Merging-sort compare times:" + times);
         System.out.println("1000w耗时" + (end - start));
     }
+
+    @Test
+    public void merge() {
+        int[] case1 = new int[]{1,3,4,5,6,2,7,8,9,10};
+        int[] case2 = new int[]{0,0,0,0,0,0,0,0,0,0};
+        Merging.merge(case1,case2, 0, 4, 9);
+        System.out.println(Arrays.toString(case2));
+    }
 }
