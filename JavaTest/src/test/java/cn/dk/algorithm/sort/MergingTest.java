@@ -20,12 +20,12 @@ public class MergingTest {
         System.out.println("Merging-sort compare times:" + times);
         System.out.println("10w耗时" + (end - start));
 
-        int[] case3 = ArrayToBeSort.generateNewArrayToBeSortRandom(10000000);
+        int[] case3 = ArrayToBeSort.generateNewArrayToBeSortRandom(1000000);
         start = System.currentTimeMillis();
         times = Merging.mergingSortRecursion(case3);
         end = System.currentTimeMillis();
         System.out.println("Merging-sort compare times:" + times);
-        System.out.println("1000w耗时" + (end - start));
+        System.out.println("100w耗时" + (end - start));
     }
 
     @Test

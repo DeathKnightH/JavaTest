@@ -48,8 +48,8 @@ public class Merging {
     public static int merge(int[] srcArray, int[] resultArray, int start, int middle, int end){
         int sumTimes = 0;
         int i,j;
-        for (i = start, j = middle + 1; i <=middle && j <= end; i++) {  // 按照归并后的数组长度进行遍历，从前往后，确保顺序为升序
-            if(srcArray[i] > srcArray[j]){                              // 从头开始比较两个有序子序列，最小的值即为当前剩余未排序中最小的值，把最小值设置到相应位置
+        for (i = start, j = middle + 1; start <=middle && j <= end; i++) {  // 按照归并后的数组长度进行遍历，从前往后，确保顺序为升序
+            if(srcArray[start] > srcArray[j]){                              // 从头开始比较两个有序子序列，最小的值即为当前剩余未排序中最小的值，把最小值设置到相应位置
                 resultArray[i] = srcArray[j];
                 j ++;
             }else{
@@ -60,7 +60,7 @@ public class Merging {
         }
         // 循环完，两个子序列的其中一个可能还有剩余（不可能两个都有剩余，因为只有其中一个子序列遍历超过了端点才会停止循环）
         if( start <= middle){
-            for (int k = 0; k <= middle - i; k++) {
+            for (int k = 0; k <= middle - start; k++) {
                 resultArray[i + k] = srcArray[start + k];
             }
         }
