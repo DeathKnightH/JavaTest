@@ -1,5 +1,7 @@
 package cn.dk.algorithm.sort;
 
+import java.util.Arrays;
+
 public class Merging {
     /**
      * 归并排序的递归实现
@@ -7,8 +9,9 @@ public class Merging {
      * @return
      */
     public static int mergingSortRecursion(int[] intArray){
-
-        int sumTimes = mergingSortRecursion(intArray, intArray, 0, intArray.length - 1);
+        int[] resultArray = new int[intArray.length];           //新申请一组空间用于存储归并后的数组
+        int sumTimes = mergingSortRecursion(intArray, resultArray, 0, intArray.length - 1);
+        //System.arraycopy(resultArray,0, intArray, 0, intArray.length);
         return sumTimes;
     }
 
@@ -16,22 +19,23 @@ public class Merging {
      * 归并排序的递归实现
      * 把srcArray中 [start,end]段的元素进行归并排序，归并至resultArray
      * @param srcArray 原序列
-     * @param resultArray1 归并后的结果序列
+     * @param resultArray 归并后的结果序列
      * @param start 起点下标
      * @param end 终点下标
      * @return
      */
-    public static int mergingSortRecursion(int[] srcArray, int[] resultArray1, int start, int end){
+    public static int mergingSortRecursion(int[] srcArray, int[] resultArray, int start, int end){
         int sumTimes = 0;
         if(start == end){       //当待排序子序列中只有一个元素时，这一个元素的子序列本身一定是有序的
-            resultArray1[start] = srcArray[start];
+            resultArray[start] = srcArray[start];
             return sumTimes;
         }
-        int[] resultArray2 = new int[srcArray.length];           //新申请一组空间用于存储归并后的数组
+
         int middle = (start + end) / 2;
-        sumTimes += mergingSortRecursion(srcArray, resultArray2, start, middle);
-        sumTimes += mergingSortRecursion(srcArray, resultArray2, middle + 1, end);
-        sumTimes += merge(resultArray2, resultArray1, start, middle, end);
+        sumTimes += mergingSortRecursion(srcArray, resultArray, start, middle);
+        sumTimes += mergingSortRecursion(srcArray, resultArray, middle + 1, end);
+        sumTimes += merge(resultArray, srcArray, start, middle, end);
+        System.arraycopy(srcArray, start ,resultArray, start, end - start + 1);
 
         return sumTimes;
     }
