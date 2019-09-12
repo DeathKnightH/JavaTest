@@ -21,15 +21,39 @@ package cn.dk.algorithm.leetcode;
  * 则中位数是 (2 + 3)/2 = 2.5
  */
 public class MedianOfTwoSortedArrays {
+    public static void main(String[] args) {
+        int[] array1 = new int[]{1,5,9};
+        int[] array2 = new int[]{1,6,9};
+        double median = findMedianSortedArrays(array1, array2);
+        System.out.println(median);
+    }
+
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m1 = 0, m2 = 0;
-        int i1 = 0, i2 = 0;
-        while((i1 + i2) <= nums1.length + nums2.length){
-            if (nums1[i1] < nums2[i2]){
+        int i1 = 1, i2 = 1;
+        int middleIndex = (nums1.length + nums2.length)/2;
+        boolean isOdd = ((nums1.length + nums2.length) & 1) == 1;
+        while((i1 + i2) <= middleIndex + 1){
+            int currentValue = 0;
+            if (nums1[i1 - 1] < nums2[i2 - 1]){
+                currentValue = nums1[i1 - 1];
+                i1 ++;
+            }else {
+                currentValue = nums2[i2 - 1];
+                i2 ++;
+            }
 
+            if((i1 + i2) == middleIndex){
+                m1 = currentValue;
+                if(isOdd){
+                    m2 = m1;
+                }
+            }else if((i1 + i2) == middleIndex + 1){
+                if(!isOdd){
+                    m2 = currentValue;
+                }
             }
         }
         return (m1 + m2)/2;
     }
-
 }
