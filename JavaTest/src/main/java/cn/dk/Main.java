@@ -30,6 +30,7 @@ public class Main {
 //        byte[] bytes = byteArrayOutputStream.toByteArray();
 //        String byteString = new String(bytes);
 //        System.out.println(byteString);
-        String byteString = "2";
+//        String byteString = "2";
+        System.out.println(Locale.SIMPLIFIED_CHINESE.toString());
     }
 }
