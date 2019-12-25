@@ -2,18 +2,7 @@ package cn.dk.basic.threadtest;
 
 public class ThreadTest {
     public static void main(String[] args){
-        CountThreadSyn test = new CountThreadSyn();
-        Thread a = new Thread(test,"A");
-        Thread b = new Thread(test,"B");
-        Thread c = new Thread(test,"C");
-        Thread d = new Thread(test,"D");
-        Thread e = new Thread(test,"E");
-
-        a.start();
-        b.start();
-        c.start();
-        d.start();
-        e.start();
+        testRandom();
     }
 
     public static void test1() {
@@ -45,20 +34,5 @@ public class ThreadTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void testNonSynchronized() {
-        CountThreadNonSyn test = new CountThreadNonSyn();
-        Thread a = new Thread(test,"A");
-        Thread b = new Thread(test,"B");
-        Thread c = new Thread(test,"C");
-        Thread d = new Thread(test,"D");
-        Thread e = new Thread(test,"E");
-
-        a.start();
-        b.start();
-        c.start();
-        d.start();
-        e.start();
     }
 }
