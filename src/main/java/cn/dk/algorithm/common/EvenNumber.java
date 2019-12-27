@@ -1,4 +1,4 @@
-package cn.dk.algorithm;
+package cn.dk.algorithm.common;
 
 public class EvenNumber {
     public static void main(String[] args) {
