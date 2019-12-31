@@ -1,7 +1,9 @@
 # JavaTest
-  * Java语言特性基础训练
-  * leetcode算法训练
-  * 多线程训练
-  * 设计模式实践
-  * JVM测试
-  * 基本网络接口测试
+
+  * [Java语言基础特性](/src/main/java/cn/dk/basic)
+  * [算法训练](/src/main/java/cn/dk/algorithm)
+  * [并发与多线程](/src/main/java/cn/dk/concurrency)
+  * [设计模式实践](/src/main/java/cn/dk/designpattern)
+  * [JVM参数与命令测试](/src/main/java/cn/dk/jvm)
+  * [网络编程](/src/main/java/cn/dk/net)
+
