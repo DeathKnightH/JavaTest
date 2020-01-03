@@ -6,4 +6,4 @@
 
 ## 1. Index
 
-[MySQL 批量插入](/mysql_batch_insert_function.sql)
+[SQL 批量操作](/banch)
