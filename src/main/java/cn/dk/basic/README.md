@@ -6,6 +6,8 @@
 
 ## 1. 语言基础
 
+[变量](/variables)
+
 [数组](/arraytest)
 
 [集合](/collectiontest)
