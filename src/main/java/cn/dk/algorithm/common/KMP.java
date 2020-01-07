@@ -1,4 +1,4 @@
-package cn.dk.algorithm;
+package cn.dk.algorithm.common;
 
 import java.util.Arrays;
 
