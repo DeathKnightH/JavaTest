@@ -1,4 +1,4 @@
-package cn.dk.basic.arraytest;
+package cn.dk.basic.variables.array;
 
 public class ArrayTest {
     private static int[] changeValueOfIndex(int[] arr, int index){
