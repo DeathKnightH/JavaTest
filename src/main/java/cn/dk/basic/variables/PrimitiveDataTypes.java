@@ -118,7 +118,34 @@ public class PrimitiveDataTypes {
         temp = 1 + 5 != 0;
     }
 
+    /**
+     * 各种基本类型的字面量展示
+     */
+    public static void literalsTest() {
+        // The number 26, in decimal
+        int decVal = 26;
+        //  The number 26, in hexadecimal
+        int hexVal = 0x1a;
+        // The number 26, in binary
+        int binVal = 0b11010;
+        System.out.println("If 26 == 0x1a == 0b11010 : " + (decVal == hexVal && hexVal == binVal));
+
+        double d1 = 123.4;
+        // same value as d1, but in scientific notation
+        double d2 = 1.234e2;
+        System.out.println("If 123.4 == 1.234e2 : " + (d1 == d2));
+
+        long normal = 999999999L;
+        long withUnderscore = 9_9999_9999L;
+        System.out.println("If 9_9999_9999L == 999999999L : " + (normal == withUnderscore));
+
+        char c = '\u00ff';
+        // 这里注意 unicode 转义的写法，因为Unicode转义会在解析代码前完成，所以即使\u 存在于注释中也会被转义，所以需要在前面多加一个 '\'字符
+        System.out.println("Character of '\\u00ff' : " + c);
+    }
+
     public static void main(String[] args) {
+        literalsTest();
     }
 
 }
