@@ -28,4 +28,3 @@
 | double  | 64           | Double    | 0.0d                   |                                              |
 | boolean | ***8***      | Boolean   | false                  | true \| false                                |
 | char    | 16           | Character | '/u0000'               | '/u0000' ~ '/uffff'                          |
-
