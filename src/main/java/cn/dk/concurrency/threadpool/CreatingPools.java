@@ -9,7 +9,7 @@ public class CreatingPools {
     /**
      * 直接使用 ThreadPoolExecutor 类的构造函数创建线程池
      */
-    public static void threadPoolExecutor() {
+    public static ThreadPoolExecutor threadPoolExecutor() {
         // 核心线程数
         int coreThreadNumber = 4;
         // 最大线程数
@@ -23,6 +23,7 @@ public class CreatingPools {
         // 使用以上参数以及 默认的 ThreadFactory 和 AbortPolicy 构造一个线程池实例
         ThreadPoolExecutor executor = new ThreadPoolExecutor(coreThreadNumber, maxThreadNumber, keepAliveTime, util,
                 workQueue, Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+        return executor;
     }
 
     /**

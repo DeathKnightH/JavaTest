@@ -140,7 +140,7 @@ public class PrimitiveDataTypes {
         System.out.println("If 9_9999_9999L == 999999999L : " + (normal == withUnderscore));
 
         char c = '\u00ff';
-        // 这里注意 unicode 转义的写法，因为Unicode转义会在解析代码前完成，所以即使\u 存在于注释中也会被转义，所以需要在前面多加一个 '\'字符
+        // 这里注意 unicode 转义的写法，因为Unicode转义会在解析代码前完成，所以即使\\u 存在于注释中也会被转义，所以需要在前面多加一个 '\'字符
         System.out.println("Character of '\\u00ff' : " + c);
     }
 
