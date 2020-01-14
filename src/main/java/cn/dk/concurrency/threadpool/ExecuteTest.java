@@ -11,6 +11,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 测试ThreadPoolExecutor 的任务执行方式
  */
 public class ExecuteTest {
+    /**
+     * 测试 execute 和 Runnable
+     */
     public static void executeTest() {
         // 核心线程 4，最大线程8，工作队列 100
         ThreadPoolExecutor executor = CreatingPools.threadPoolExecutor();
@@ -28,6 +31,9 @@ public class ExecuteTest {
         System.out.println("Finish all the threads");
     }
 
+    /**
+     * 测试 submit 和 Callable
+     */
     public static void submitTest() {
         // 核心线程 4，最大线程8，工作队列 100
         ThreadPoolExecutor executor = CreatingPools.threadPoolExecutor();
