@@ -21,6 +21,8 @@
 | 27   | [Remove Element](/RemoveElement.java)                        | 嵌套循环                         | 双指针，单循环                         |
 | 28   | [Implement strStr()](/ImplementStrStr.java)                  | 嵌套循环                         |                                        |
 | 35   | [SearchInsertPosition](/SearchInsertPosition.java)           | 二分法                           |                                        |
+| 70   | [ClimbingStairs](/ClimbingStairs.java)                       | 动态规划                         |                                        |
+| 198  | [HouseRobber](/HouseRobber.java)                             | 动态规划                         |                                        |
 | 213  | [House Robber II](/HouseRobberII.java)                       | 动态规划                         |                                        |
 | 322  | [Coin Change](/CoinChange.java)                              | 递归                             | 动态规划                               |
 | 394  | [Decode String](/DecodeString.java)                          | stack                            |                                        |
