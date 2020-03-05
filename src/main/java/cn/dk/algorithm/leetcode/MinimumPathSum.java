@@ -99,6 +99,30 @@ public class MinimumPathSum {
                 {3, 4, 9, 2, 8, 3, 1, 2, 6, 9, 7, 0, 2, 4, 2, 0},
                 {5, 1, 8, 8, 4, 6, 8, 5, 2, 4, 1, 6, 2, 2, 9, 7}
         };
-        System.out.println(minPathSumAdvance(grid));
+        System.out.println(minPath(grid));
+    }
+
+    /**
+     * 动态规划改进版，不使用递归，只使用一维数组存储，由于路径只能向右或者向下，可以分列或者分行计算，一列一列地扫描每次外层循环计算一列上的路径最小值
+     *
+     * @param grid
+     * @return
+     */
+    public static int minPath(int[][] grid) {
+        int m = grid.length, n = grid[0].length;
+        int[] memory = new int[m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (j == 0) { //最上一行，只能向右走，从列的角度看相当于没走
+                    memory[j] = memory[j];
+                } else if (i == 0) { //最左侧一列，只能向下走
+                    memory[j] = memory[j - 1];
+                } else {
+                    memory[j] = Math.min(memory[j], memory[j - 1]);
+                }
+                memory[j] += grid[j][i];
+            }
+        }
+        return memory[m - 1];
     }
 }
