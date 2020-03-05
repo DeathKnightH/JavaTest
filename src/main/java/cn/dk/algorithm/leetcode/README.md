@@ -26,6 +26,7 @@
 | 70   | [ClimbingStairs](/ClimbingStairs.java)                       | 动态规划                         |                                        |
 | 198  | [HouseRobber](/HouseRobber.java)                             | 动态规划                         |                                        |
 | 213  | [House Robber II](/HouseRobberII.java)                       | 动态规划                         |                                        |
+| 303  | [RangeSumQueryImmutable](/RangeSumQueryImmutable.java)       | 动态规划                         |                                        |
 | 322  | [Coin Change](/CoinChange.java)                              | 递归                             | 动态规划                               |
 | 394  | [Decode String](/DecodeString.java)                          | stack                            |                                        |
 |      |                                                              |                                  |                                        |
