@@ -1,5 +1,7 @@
 package cn.dk.algorithm.leetcode;
 
+import java.util.Arrays;
+
 /**
  * [413] 等差数列划分
  * 如果一个数列至少有三个元素，并且任意两个相邻元素之差相同，则称该数列为等差数列。
@@ -69,5 +71,27 @@ public class ArithmeticSlices {
     public static void main(String[] args) {
         int[] array = new int[]{1, 2, 3, 4};
         System.out.println(numberOfArithmeticSlices(array));
+        System.out.println("Array " + Arrays.toString(array) + ", DP function sum:" + dp(array));
+    }
+
+    /**
+     * 动态规划解法，使用一个同样大小的一维数组存储到当前元素结束的等差子数组的个数，即 memory[i] = memory[i-1] + 1
+     *
+     * @param A
+     * @return
+     */
+    public static int dp(int[] A) {
+        if (A == null || A.length < 3) {
+            return 0;
+        }
+        int sum = 0;
+        int[] memory = new int[A.length];
+        for (int i = 2; i < A.length; i++) {
+            if (A[i - 1] - A[i - 2] == A[i] - A[i - 1]) {
+                memory[i] = memory[i - 1] + 1;
+            }
+            sum += memory[i];
+        }
+        return sum;
     }
 }
