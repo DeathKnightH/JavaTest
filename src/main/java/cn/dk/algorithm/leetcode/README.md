@@ -28,6 +28,7 @@
 | 213  | [House Robber II](/HouseRobberII.java)                       | 动态规划                         |                                        |
 | 303  | [RangeSumQueryImmutable](/RangeSumQueryImmutable.java)       | 动态规划                         |                                        |
 | 322  | [Coin Change](/CoinChange.java)                              | 递归                             | 动态规划                               |
+| 343  | [Integer Break](/IntegerBreak.java)                          | 动态规划                         |                                        |
 | 394  | [Decode String](/DecodeString.java)                          | stack                            |                                        |
 | 413  | [Arithmetic Slices](/ArithmeticSlices.java)                  | 动态规划/数学公式+单循环         |                                        |
 
