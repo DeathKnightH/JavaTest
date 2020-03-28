@@ -29,26 +29,15 @@ public class Quick {
     }
 
     private static int partition(int[] origin, int start, int end) {
-        if (end - start == 1) {
-            if (origin[start] > origin[end]) {
-                swapArray(origin, start, end);
-                return start;
-            }
-        }
         int stand = origin[start];
         for (int i = start + 1; i <= end; i++) {
-            if (stand <= origin[i]) {
+            while (stand < origin[i] && end >= i) {
                 swapArray(origin, i, end);
                 end--;
             }
         }
-        if (origin[start] > origin[end]) {
-            swapArray(origin, start, end);
-            return end;
-        } else {
-            swapArray(origin, start, end - 1);
-            return end - 1;
-        }
+        swapArray(origin, start, end);
+        return end;
     }
 
     private static void swapArray(int[] origin, int x, int y) {
@@ -59,10 +48,12 @@ public class Quick {
 
     public static void main(String[] args) {
         int[] testArray = new int[]{5, 4, 6, 8, 7, 1};
-        int partition = partition(testArray, 0, 5);
-        System.out.println("Partition index: " + partition + ". Array: " + Arrays.toString(testArray));
+        //int partition = partition(testArray, 0, 5);
+        //System.out.println("Partition index: " + partition + ". Array: " + Arrays.toString(testArray));
+        quickSort(testArray, 0, 5);
+        System.out.println("Sort Array: " + Arrays.toString(testArray));
         testArray = new int[]{3, 2, 1};
-        partition = partition(testArray, 0, 2);
+        int partition = partition(testArray, 0, 2);
         System.out.println("Partition index: " + partition + ". Array: " + Arrays.toString(testArray));
     }
 }
