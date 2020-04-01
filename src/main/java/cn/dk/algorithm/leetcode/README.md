@@ -2,7 +2,7 @@
 
 ## 0. Introduction
 
-记录 leetcode-cn 上做题的思路和代码
+记录 leetcode-cn 上做题的思路和代码，具体的写法和详细思路在代码注释。
 
 ## 1. Index
 
@@ -31,6 +31,7 @@
 | 303  | [RangeSumQueryImmutable](/RangeSumQueryImmutable.java)       | 动态规划                         |                                        |
 | 322  | [Coin Change](/CoinChange.java)                              | 递归                             | 动态规划                               |
 | 343  | [Integer Break](/IntegerBreak.java)                          | 动态规划                         |                                        |
+| 345  | [ReverseVowelsOfAString](/twopointers/ReverseVowelsOfAString.java) | 双指针，单循环                   |                                        |
 | 394  | [Decode String](/DecodeString.java)                          | stack                            |                                        |
 | 413  | [Arithmetic Slices](/ArithmeticSlices.java)                  | 动态规划/数学公式+单循环         |                                        |
 | 633  | [SumOfSquareNumbers](/twopointers/SumOfSquareNumbers.java)   | 双指针，单循环                   |                                        |
