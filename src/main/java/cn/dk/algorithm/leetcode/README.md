@@ -24,6 +24,7 @@
 | 62   | [UniquePaths](/UniquePaths.java)                             | 动态规划                         |                                        |
 | 64   | [MinimumPathSum](/MinimumPathSum.java)                       | 动态规划                         |                                        |
 | 70   | [ClimbingStairs](/ClimbingStairs.java)                       | 动态规划                         |                                        |
+| 167  | [TwoSumiiInputArrayIsSorted](/twopointers/TwoSumiiInputArrayIsSorted.java) | 双指针，单循环                   |                                        |
 | 198  | [HouseRobber](/HouseRobber.java)                             | 动态规划                         |                                        |
 | 213  | [House Robber II](/HouseRobberII.java)                       | 动态规划                         |                                        |
 | 279  | [Perfect Squares](/PerfectSquares.java)                      | 动态规划                         |                                        |
@@ -32,4 +33,15 @@
 | 343  | [Integer Break](/IntegerBreak.java)                          | 动态规划                         |                                        |
 | 394  | [Decode String](/DecodeString.java)                          | stack                            |                                        |
 | 413  | [Arithmetic Slices](/ArithmeticSlices.java)                  | 动态规划/数学公式+单循环         |                                        |
+| 633  | [SumOfSquareNumbers](/twopointers/SumOfSquareNumbers.java)   | 双指针，单循环                   |                                        |
+
+
+
+## 2.常见解题思路
+
+| 思路     | 描述                                             | 典型例题 |
+| -------- | ------------------------------------------------ | -------- |
+| 双指针   | 常用于线性结构的数据，用头尾两个指针协同完成任务 | 167，633 |
+| 动态规划 |                                                  |          |
+|          |                                                  |          |
 
