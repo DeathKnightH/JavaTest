@@ -2,7 +2,7 @@
 
 ## 0. Introduction
 
-记录 leetcode-cn 上做题的思路和代码
+记录 leetcode-cn 上做题的思路和代码，具体的写法和详细思路在代码注释。
 
 ## 1. Index
 
@@ -21,8 +21,28 @@
 | 27   | [Remove Element](/RemoveElement.java)                        | 嵌套循环                         | 双指针，单循环                         |
 | 28   | [Implement strStr()](/ImplementStrStr.java)                  | 嵌套循环                         |                                        |
 | 35   | [SearchInsertPosition](/SearchInsertPosition.java)           | 二分法                           |                                        |
+| 62   | [UniquePaths](/UniquePaths.java)                             | 动态规划                         |                                        |
+| 64   | [MinimumPathSum](/MinimumPathSum.java)                       | 动态规划                         |                                        |
+| 70   | [ClimbingStairs](/ClimbingStairs.java)                       | 动态规划                         |                                        |
+| 167  | [TwoSumiiInputArrayIsSorted](/twopointers/TwoSumiiInputArrayIsSorted.java) | 双指针，单循环                   |                                        |
+| 198  | [HouseRobber](/HouseRobber.java)                             | 动态规划                         |                                        |
 | 213  | [House Robber II](/HouseRobberII.java)                       | 动态规划                         |                                        |
+| 279  | [Perfect Squares](/PerfectSquares.java)                      | 动态规划                         |                                        |
+| 303  | [RangeSumQueryImmutable](/RangeSumQueryImmutable.java)       | 动态规划                         |                                        |
 | 322  | [Coin Change](/CoinChange.java)                              | 递归                             | 动态规划                               |
+| 343  | [Integer Break](/IntegerBreak.java)                          | 动态规划                         |                                        |
+| 345  | [ReverseVowelsOfAString](/twopointers/ReverseVowelsOfAString.java) | 双指针，单循环                   |                                        |
 | 394  | [Decode String](/DecodeString.java)                          | stack                            |                                        |
-|      |                                                              |                                  |                                        |
+| 413  | [Arithmetic Slices](/ArithmeticSlices.java)                  | 动态规划/数学公式+单循环         |                                        |
+| 633  | [SumOfSquareNumbers](/twopointers/SumOfSquareNumbers.java)   | 双指针，单循环                   |                                        |
+
+
+
+## 2.常见解题思路
+
+| 思路     | 描述                                             | 典型例题 |
+| -------- | ------------------------------------------------ | -------- |
+| 双指针   | 常用于线性结构的数据，用头尾两个指针协同完成任务 | 167，633 |
+| 动态规划 |                                                  |          |
+|          |                                                  |          |
 
