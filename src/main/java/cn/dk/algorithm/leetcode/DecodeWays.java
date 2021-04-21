@@ -27,26 +27,51 @@ package cn.dk.algorithm.leetcode;
  */
 public class DecodeWays {
     public static int numDecodings(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.length() == 0 || s.charAt(0) == '0') {
             return 0;
         }
         int length = s.length();
-        int[] memory = new int[length];
-        if (s.charAt(0) == '0') {
-            memory[0] = 0;
-        } else {
-            memory[0] = 1;
-        }
+        int[] memory = new int[length + 1];
+        memory[0] = 1;
         if (length > 1) {
-            for (int i = 1; i < length; i++) {
-                int increase = 0;
-                if (s.charAt(i - 1) == '1' || (s.charAt(i - 1) == '2' && s.charAt(i) != '0' && Integer.valueOf(s.substring(i - 1, i)) <= 6)) {
-                    increase = 1;
+            boolean b = (s.charAt(0) - '0') * 10 + (s.charAt(1) - '0') <= 26;
+            if(s.charAt(1) != '0'){
+                if(b){
+                    memory[1] = 2;
+                }else{
+                    memory[1] = 1;
                 }
-                memory[i] = memory[i - 1] + increase;
+            }else{
+                if(b){
+                    memory[1] = 1;
+                }
+            }
+        }
+        if(length > 2){
+            for (int i = 2; i < length; i++) {
+                if (s.charAt(i) != '0'){
+                    memory[i] += memory[i-1];
+                }
+                if(s.charAt(i - 1) != '0' && (s.charAt(i - 1) - '0') * 10 + (s.charAt(i) - '0') <= 26)
+                memory[i] += memory[i - 2];
             }
         }
         return memory[length - 1];
+    }
+
+    public static int numDecodingsD(String s) {
+        int n = s.length();
+        int[] f = new int[n + 1];
+        f[0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            if (s.charAt(i - 1) != '0') {
+                f[i] += f[i - 1];
+            }
+            if (i > 1 && s.charAt(i - 2) != '0' && ((s.charAt(i - 2) - '0') * 10 + (s.charAt(i - 1) - '0') <= 26)) {
+                f[i] += f[i - 2];
+            }
+        }
+        return f[n];
     }
 
     public static void main(String[] args) {
@@ -57,6 +82,8 @@ public class DecodeWays {
         s = "0";
         System.out.println(s + ", ways: " + numDecodings(s));
         s = "10";
+        System.out.println(s + ", ways: " + numDecodings(s));
+        s = "210";
         System.out.println(s + ", ways: " + numDecodings(s));
     }
 }
