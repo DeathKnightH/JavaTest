@@ -9,5 +9,8 @@ public class ArrayListTest {
         List<String> employeeList = new ArrayList<>();
         int size = employeeList.size();
         List<String> employeeVector = new Vector<>();
+        employeeList.add("s");
+        employeeList.add(2, "s");
+        System.out.println(employeeList.size());
     }
 }
