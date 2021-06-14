@@ -10,7 +10,7 @@ public class Frame extends JFrame {
     }
 
     private void init(JPanel panel){
-        this.setSize(1000,1000);
+        this.setSize(1600,1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(panel);
         this.setLocationRelativeTo(null);

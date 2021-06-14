@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class TreePrinter<K, V> extends JPanel{
     public static final int ROUND = 16;
-    public static final int SPACE = 20;
+    public static final int SPACE = 16;
     protected TreeNode<K, V> treeNode;
 
     protected Graphics2D g2d;
@@ -36,7 +36,7 @@ public class TreePrinter<K, V> extends JPanel{
         g2d.setBackground(Color.white);
         int height = countHeight(treeNode);
         int space= calculateRootX(height);
-        drawTree(rootX + ROUND, ROUND, space, treeNode);
+        drawTree(rootX, ROUND, space, treeNode);
     }
 
     /**
@@ -48,20 +48,20 @@ public class TreePrinter<K, V> extends JPanel{
         drawTreeNode(rootX, rootY, treeNode);
         if (treeNode.getLeft() != null){
             drawTreeLine(rootX, rootY, space, true);
-            drawTree(rootX - space, rootY + space, (int) (space/1.5), treeNode.getLeft());
+            drawTree(rootX - space, rootY + SPACE, space/2, treeNode.getLeft());
         }
         if (treeNode.getRight() != null){
             drawTreeLine(rootX, rootY, space, false);
-            drawTree(rootX + space, rootY + space, (int) (space/1.5), treeNode.getRight());
+            drawTree(rootX + space, rootY + SPACE, space/2, treeNode.getRight());
         }
     }
 
     private int calculateRootX(int height){
         int basicSpace = SPACE;
-        rootX = 0;
+        rootX = basicSpace;
         for (int i = 0; i < height - 1; i++) {
+            basicSpace *= 2;
             rootX += basicSpace;
-            basicSpace *= 1.5;
         }
         return basicSpace;
     }
@@ -89,11 +89,11 @@ public class TreePrinter<K, V> extends JPanel{
 
     private void drawTreeLine(int x, int y, int space, boolean left){
         g2d.setColor(Color.black);
-        int offset = (int) Math.sqrt(ROUND*ROUND/2);
+        int offset = (int) Math.sqrt(2*ROUND - 1);
         if(left){
-            g2d.drawLine(x - offset, y + offset, x - space + offset, y + space - offset);
+            g2d.drawLine(x - ROUND + 1, y + offset, x - space + ROUND - 1, y + SPACE - offset);
         }else {
-            g2d.drawLine(x + offset, y + offset, x + space - offset, y + space - offset);
+            g2d.drawLine(x + ROUND - 1, y + offset, x + space - ROUND + 1, y + SPACE - offset);
         }
         initColor();
     }
