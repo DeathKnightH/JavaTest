@@ -36,7 +36,7 @@ public class Q1 {
         return treeNodeList[1];
     }
 
-    private static TreeNode<Integer, Integer> practice3(){
+    static TreeNode<Integer, Integer> practice3(){
         initNodes();
         treeNodeList[3].setLeft(treeNodeList[1]);
         treeNodeList[3].setRight(treeNodeList[5]);
