@@ -7,12 +7,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TreePrinter<K, V> extends JPanel{
-    public static final int ROUND = 30;
+    public static final int ROUND = 16;
+    public static final int SPACE = 20;
     protected TreeNode<K, V> treeNode;
 
     protected Graphics2D g2d;
 
     private Color defaultColor;
+
+    private int rootX;
 
     public TreePrinter(TreeNode<K, V> treeNode) {
         this.treeNode = treeNode;
@@ -31,6 +34,9 @@ public class TreePrinter<K, V> extends JPanel{
     public void paint(Graphics g) {
         g2d = (Graphics2D) g;
         g2d.setBackground(Color.white);
+        int height = countHeight(treeNode);
+        int space= calculateRootX(height);
+        drawTree(rootX + ROUND, ROUND, space, treeNode);
     }
 
     /**
@@ -38,8 +44,38 @@ public class TreePrinter<K, V> extends JPanel{
      * @param rootX 根的横坐标
      * @param rootY 根的纵坐标
      */
-    protected void drawTree(int rootX, int rootY){
+    protected void drawTree(int rootX, int rootY, int space, TreeNode<K, V> treeNode){
+        drawTreeNode(rootX, rootY, treeNode);
+        if (treeNode.getLeft() != null){
+            drawTreeLine(rootX, rootY, space, true);
+            drawTree(rootX - space, rootY + space, (int) (space/1.5), treeNode.getLeft());
+        }
+        if (treeNode.getRight() != null){
+            drawTreeLine(rootX, rootY, space, false);
+            drawTree(rootX + space, rootY + space, (int) (space/1.5), treeNode.getRight());
+        }
+    }
 
+    private int calculateRootX(int height){
+        int basicSpace = SPACE;
+        rootX = 0;
+        for (int i = 0; i < height - 1; i++) {
+            rootX += basicSpace;
+            basicSpace *= 1.5;
+        }
+        return basicSpace;
+    }
+
+    private int countHeight(TreeNode<K, V> treeNode){
+        if(treeNode == null){
+            return 0;
+        }
+        if (treeNode.getLeft() == null && treeNode.getRight() == null){
+            return 1;
+        }
+        int leftHeight = countHeight(treeNode.getLeft());
+        int rightHeight = countHeight(treeNode.getRight());
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 
     protected int countLeft(TreeNode<K, V> treeNode){
@@ -53,11 +89,11 @@ public class TreePrinter<K, V> extends JPanel{
 
     private void drawTreeLine(int x, int y, int space, boolean left){
         g2d.setColor(Color.black);
-        int offset = (int) Math.sqrt(ROUND);
+        int offset = (int) Math.sqrt(ROUND*ROUND/2);
         if(left){
-            g2d.drawLine(x - offset, y - offset, x - space + offset, y - space + offset);
+            g2d.drawLine(x - offset, y + offset, x - space + offset, y + space - offset);
         }else {
-            g2d.drawLine(x + offset, y - offset, x + space - offset, y - space + offset);
+            g2d.drawLine(x + offset, y + offset, x + space - offset, y + space - offset);
         }
         initColor();
     }
@@ -93,7 +129,7 @@ public class TreePrinter<K, V> extends JPanel{
         String string = key.toString();
         int width = fontDesignMetrics.stringWidth(string);
         int height = fontDesignMetrics.getHeight();
-        g2d.drawString(string, x - width/2, y - height/2);
+        g2d.drawString(string, x - width/2, y + height/2 - fontDesignMetrics.getAscent()/2);
         initColor();
     }
 
