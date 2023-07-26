@@ -3,8 +3,8 @@ package cn.dk.base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 测试 Redis 基本数据类型
@@ -19,6 +19,11 @@ public class StringTest {
 
     public boolean setString(String key, String testString) {
         redisTemplate.boundValueOps(key).set(testString);
+        return true;
+    }
+
+    public boolean setString(String key, String testString, long timeout){
+        redisTemplate.boundValueOps(key).set(testString, timeout, TimeUnit.SECONDS);
         return true;
     }
 
