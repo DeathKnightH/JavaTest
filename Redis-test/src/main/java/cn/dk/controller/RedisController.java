@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping("/test/redis")
@@ -26,6 +29,12 @@ public class RedisController {
             return stringTest.setString(key, value);
         }
         return stringTest.setString(key, value, timeout);
+    }
+
+    @PostMapping("/setStringBatch")
+    @ResponseBody
+    public boolean setString(@RequestBody Map<String, String> keyValues){
+        return stringTest.setStringBatch(keyValues);
     }
 
     @GetMapping("/getstring")
