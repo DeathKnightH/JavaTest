@@ -1,7 +1,9 @@
 package cn.dk.controller;
 
 import cn.dk.base.HashTest;
+import cn.dk.base.ListTest;
 import cn.dk.base.StringTest;
+import cn.dk.base.bean.ListInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,9 @@ public class RedisController {
 
     @Autowired
     private HashTest hashTest;
+
+    @Autowired
+    private ListTest listTest;
 
     @PostMapping("/setstring")
     @ResponseBody
@@ -54,5 +59,17 @@ public class RedisController {
     @ResponseBody
     public String getHashString(String hashName, String key){
         return hashTest.getHashValue(hashName, key);
+    }
+
+    @PostMapping("leftPush")
+    @ResponseBody
+    public long addValueToList(@RequestBody ListInput listInput){
+        return listTest.lpush(listInput.getKey(), listInput.getValues());
+    }
+
+    @PostMapping("rightPop")
+    @ResponseBody
+    public String rightPop(String key){
+        return listTest.rightPop(key);
     }
 }
